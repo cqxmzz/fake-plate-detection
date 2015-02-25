@@ -1,0 +1,26 @@
+There are two programs in the folder.
+sort.java
+Basic.java
+
+If the data is already sorted, you can directly run the Basic.java to get the answer.
+If not you need to run the sort.java to get the sorted data then run the Basic.java.
+
+-sort.java
+Change [toBeSorted] to your data file path and give the output file a name by changing [sort_output].
+
+-Basic.java
+[input_file] is your data file path and [ground_truth] should be the list of bad plates.
+[RecordWindow] means the number of searching records back when finding an abnormal record.
+[DistanceWindow](km) means the maximum distance of searching records back when finding an abnormal record.
+[CountLimit] is the noise filter parameter, it means how many records you can tolerate in distance window.
+[SpeedLimit](km/s) means the maximum speed allowed, if the speed between two records is over this value then the detector will work.
+[DistanceLimit](km/s) means the maximum distance allowed, if the distance between two records is over this value then the detector will work.
+
+You can change the parameters to find a best combination. Notice that if you set CountLimit = 0 then the noise filter is closed.
+The parameter of function [run] is used to batch running the program when testing different parameters.
+Run the program and it will output the recall, precision and F1score.
+
+The output file will be guilty.txt. It lists the bad plates detected and their probablitily.
+
+
+Author: Wuxuan Jiang
